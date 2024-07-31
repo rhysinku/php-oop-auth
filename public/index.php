@@ -3,9 +3,8 @@
 <?php include('includes/Header.php') ?>
 <?php include('includes/Navigation.php') ?>
 
+<main>
 
-<?php include('pages/Login.php') ?>
-
-
+</main>
 
 <?php include('includes/Footer.php') ?>

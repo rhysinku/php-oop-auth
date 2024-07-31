@@ -1,6 +1,9 @@
 
+<?php include('includes/Header.php') ?>
+<?php include('includes/Navigation.php') ?>
 
     
+<main>
 <form action="">
 
 <div class="input_form">
@@ -18,3 +21,6 @@
 
 </form>
 <p><a href="">Register Here</a></p>
+</main>
+
+<?php include('includes/Footer.php') ?>
