@@ -1,5 +1,19 @@
-# .htaccess
+# # .htaccess
+
+
+# RewriteEngine On
+
+# # Redirect all requests to the public directory
+# RewriteRule ^$ public/index.php [L]
+# RewriteRule (.*) public/$1 [L]
+
 
 RewriteEngine On
+
+# Redirect all requests to the public directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/$1 [L]
+
+# If accessing directly, display the public/index.php file
 RewriteRule ^$ public/index.php [L]
-RewriteRule (.*) public/$1 [L]
