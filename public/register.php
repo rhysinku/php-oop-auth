@@ -3,24 +3,37 @@
 
 
 <main>
-<h1>Create your account</h1>
-    <form action="">
+    <div class="wrapper">
+        <div class="form_con">
 
-        <div class="input_form">
-            <input type="text" name="name">
+            <h1>Create Account</h1>
+
+            <form action="" class="form">
+
+                <div class="input_form">
+                    <span>Username</span>
+                    <input type="text" name="name">
+                </div>
+
+                <div class="input_form">
+                    <span>Password</span>
+                    <input type="text" name="password">
+                </div>
+                
+                <div class="input_form">
+                    <span>Password</span>
+                    <input type="text" name="password">
+                </div>
+
+                <button class="btn">
+                    Sign Up
+                </button>
+
+                <p><a href="">Register Here</a></p>
+            </form>
+
         </div>
-
-        <div class="input_form">
-            <input type="text" name="password">
-        </div>
-
-        <button class="btn">
-            Register
-        </button>
-
-
-    </form>
-    <p><a href="">Register Here</a></p>
+    </div>
 </main>
 
 <?php include('includes/Footer.php') ?>
