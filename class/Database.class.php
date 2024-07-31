@@ -12,10 +12,17 @@ class Database {
 
     public function __contruct(){
         $dsn = 'mysql:host=' . $this->host . '; dbname=' . $this->dbname;
-        $option = array(
+        $options = array(
             PDO:: ATTR_PERSISTENT => true;
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         );
+
+        try{
+            $this->dbh = new PDO($dsn , $this->user, $this->pass, $options)
+        }catch(PDOexception $e){
+            $this->error = $e->getMessage();
+            echo $this->error;
+        }
 
 
         

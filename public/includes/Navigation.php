@@ -1,0 +1,9 @@
+<header>
+        <h1>OOP-AUTH</h1>
+        <nav>
+            <ul>
+                <li>Register</li>
+                <li>Login</li>
+            </ul>
+        </nav>
+    </header>
