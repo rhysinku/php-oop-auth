@@ -7,10 +7,8 @@ class Database {
     private $pass = "";
     private $dbname = "oop-auth";
     private $dbh;
-    private $stmt;
-    private $error;
 
-    public function __construct(){
+    protected function connect(){
         $dns = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
         $options = array(
             PDO::ATTR_PERSISTENT => true,
@@ -20,13 +18,13 @@ class Database {
            $this->dbh = new PDO($dns, $this->user, $this->pass, $options);
                     
         } catch (PDOException $e) {
-            //throw $th;
+            die('Connection failed: ' . $e->getMessage());
         }
     }
 
-    public function query($sql){
-        $this->stmt = $this->dbh->prepare($sql);
-    }
+    // public function query($sql){
+    //     $this->stmt = $this->dbh->prepare($sql);
+    // }
    
         
 }
