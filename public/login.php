@@ -16,7 +16,7 @@
                 </div>
 
                 <div class="input_form">
-                <span>Password</span>
+                    <span>Password</span>
                     <input type="text" name="password">
                 </div>
 
@@ -26,7 +26,7 @@
 
                 <p><a href="">Register Here</a></p>
             </form>
-           
+
         </div>
     </div>
 </main>
