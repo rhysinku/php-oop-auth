@@ -8,8 +8,19 @@ class User extends Database {
         $this->connect();
     }
     
-protected function  setUser ($username , $useremail , $userpassword){
-    $stmt = "INSERT INTO users ";
+protected function  Register ($username , $useremail , $userpassword){
+    $sql = "INSERT INTO user (username, email, password) VALUES (? , ? , ?) ";
+    $stmt = $this->dbh->prepare($sql);
+    $hashPassowrd = password_hash($userpassword , PASSWORD_BCRYPT);
+
+    try {
+        //code...
+        return $stmt->execute(array($username , $useremail , $hashPassowrd));
+        
+    } catch (PDOException $e) {
+       var_dump($e);
+    }
+    
 }
     
 }
