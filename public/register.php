@@ -1,12 +1,11 @@
-<?php include('includes/Header.php') ?>
-<?php include('includes/Navigation.php') ?>
-
 <?php 
-require_once '../Database/Database.class.php';
-require_once '../Model/User.model.php';
-require_once '../Controller/UserAuth.auth.php';
+require_once 'init.php';
 
 ?>
+
+
+<?php include('includes/Header.php') ?>
+<?php include('includes/Navigation.php') ?>
 
 
 <?php

@@ -1,4 +1,5 @@
 <?php
-require_once 'Database/Database.class.php';
-require_once 'Model/User.model.php';
-require_once 'Controller/UserAuth.auth.php';
+// require_once dirname(__DIR__)."Database/Database.class.php";
+require_once dirname(__DIR__) . '/Database/Database.class.php';
+require_once dirname(__DIR__). '/Model/User.model.php';
+require_once dirname(__DIR__). '/Controller/UserAuth.auth.php';
