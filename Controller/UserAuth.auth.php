@@ -27,6 +27,13 @@ class AuthController{
     public function login($useremail , $password){
         $inputFields = [$useremail , $password];
         $checkfield = isEmptyInput($inputFields);
+
+        if($checkfield['status'] == true){
+            return $checkfield;
+        }
+        return $this->user->login($useremail , $password);
+        
+        
     }
 
 
