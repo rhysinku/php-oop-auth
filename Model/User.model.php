@@ -1,7 +1,6 @@
 <?php 
 
 require_once dirname(__DIR__).'/Database/Database.class.php';   
-
 class User extends Database {
 
     public function __construct(){

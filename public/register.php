@@ -1,6 +1,6 @@
 <?php 
 require_once 'init.php';
-
+require_once dirname(__DIR__).'/Util/auth.util.php'; 
 ?>
 
 
@@ -11,22 +11,28 @@ require_once 'init.php';
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $requiredFields = ['username', 'email', 'password', 'confirmpassword'];
+    $validate = validateInputs($_POST, $requiredFields);
 
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirmpassword = $_POST['confirmpassword'];
+    $processedData = $validate['data'];
+    $errors = $validate['errors'];
 
-    $auth = new AuthController();
-    $result = $auth->register($username , $email , $password , $confirmpassword );
-    if($result){
-        var_dump($result);
-    }else{
-        echo 'User Not Created';
+    if (!empty($errors)) {
+        foreach ($errors as $error) {
+            echo "<p>Error: $error</p>";
+        }
+    } else {
+        $username = $processedData['username'];
+        $email = $processedData['email'];
+        $password = $processedData['password'];
+        $confirmpassword = $processedData['confirmpassword'];
+
+        $auth = new AuthController();
+        $result = $auth->register($username, $email, $password, $confirmpassword);
+
+        echo "<p>$result</p>";
     }
-    
 }
-
 
 ?>
 
@@ -41,22 +47,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <div class="input_form">
                     <span>Username</span>
-                    <input type="text" name="username" required>
+                    <input type="text" name="username">
                 </div>
 
                 <div class="input_form">
                     <span>Email Address</span>
-                    <input type="text" name="email" required>
+                    <input type="text" name="email">
                 </div>
 
                 <div class="input_form">
                     <span>Password</span>
-                    <input type="text" name="password" required>
+                    <input type="text" name="password">
                 </div>
 
                 <div class="input_form">
                     <span>Confirm Password</span>
-                    <input type="text" name="confirmpassword" required>
+                    <input type="text" name="confirmpassword">
                 </div>
 
                 <button class="btn">
