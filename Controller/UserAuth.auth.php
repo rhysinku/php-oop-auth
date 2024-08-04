@@ -38,9 +38,9 @@ class AuthController{
     }
 
     // Auth For Getting the User
-    // public function getUser($id){
-    //     return $this->getUser($id);
-    // }
+    public function getUser($id){
+        return $this->user->getUser($id);
+    }
 
    
 }

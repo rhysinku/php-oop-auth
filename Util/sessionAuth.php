@@ -12,3 +12,5 @@ function checkSession (){
 function isLogin (){
     return isset($_SESSION['user_id']);
 }
+
+  

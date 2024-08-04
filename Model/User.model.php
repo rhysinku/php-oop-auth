@@ -49,10 +49,10 @@ public function login ($useremail , $userpassword){
     }
 }
 
-public function getUser ($id){
+public function getUser($id) {
     $sql = "SELECT * FROM user WHERE id = ?";
-    $stmt = $this->dbh->prepare($sql);
-    $stmt->execute(array($id));
+    $stmt = $this->dbh->prepare($sql); 
+    $stmt->execute([$id]);
     return $stmt->fetch(PDO::FETCH_OBJ);
 }
 
