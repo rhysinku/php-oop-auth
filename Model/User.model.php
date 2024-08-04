@@ -8,7 +8,7 @@ class User extends Database {
         $this->connect();
     }
     
-protected function  Register ($username , $useremail , $userpassword){
+public function  Register ($username , $useremail , $userpassword){
     $sql = "INSERT INTO user (username, email, password) VALUES (? , ? , ?) ";
     $stmt = $this->dbh->prepare($sql);
     $hashPassowrd = password_hash($userpassword , PASSWORD_BCRYPT);

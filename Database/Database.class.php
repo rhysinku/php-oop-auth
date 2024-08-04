@@ -6,7 +6,7 @@ class Database {
     private $user =  "root";
     private $pass = "";
     private $dbname = "oop-auth";
-    private $dbh;
+    protected $dbh;
 
     protected function connect(){
         $dns = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
