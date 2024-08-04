@@ -9,7 +9,21 @@ class AuthController{
         $this->user = new User();
     }
 
-    public function register($username , $useremail, $userpassword){
+    public function register($username , $useremail, $userpassword , $confirmpassword){
+
+        if(!$this->isPasswordMatch($userpassword , $confirmpassword)){
+            return 'Password MisMatch';
+        }
         return $this->user->register($username , $useremail, $userpassword);
+    }
+
+
+
+    private function isPasswordMatch($userpassword , $userconfirmpassword){
+
+        if($userpassword != $userconfirmpassword){
+            return false;
+        }
+        return true;
     }
 }
