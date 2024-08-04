@@ -1,6 +1,8 @@
-<?php
-session_start();
+<?php 
+require_once 'init.php';
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,5 +12,6 @@ session_start();
     <title>OOP Auth</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 
 <body>

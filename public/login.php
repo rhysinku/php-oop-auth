@@ -1,8 +1,3 @@
-<?php 
-require_once 'init.php';
-
-?>
-
 <?php include('includes/Header.php') ?>
 <?php include('includes/Navigation.php') ?>
 
