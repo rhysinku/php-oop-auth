@@ -17,19 +17,18 @@ class AuthController{
             return $checkfield;
         }
 
-        if(!$this->isPasswordMatch($userpassword , $confirmpassword)){
+        if(isPasswordMatch($userpassword , $confirmpassword)){
             return 'Password MisMatch';
         }
         return $this->user->register($username , $useremail, $userpassword);
     }
 
 
-
-    private function isPasswordMatch($userpassword , $userconfirmpassword){
-
-        if($userpassword != $userconfirmpassword){
-            return false;
-        }
-        return true;
+    public function login($useremail , $password){
+        $inputFields = [$useremail , $password];
+        $checkfield = isEmptyInput($inputFields);
     }
+
+
+   
 }
