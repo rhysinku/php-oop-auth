@@ -49,6 +49,13 @@ public function login ($useremail , $userpassword){
     }
 }
 
+public function getUser ($id){
+    $sql = "SELECT * FROM user WHERE id = ?";
+    $stmt = $this->dbh->prepare($sql);
+    $stmt->execute(array($id));
+    return $stmt->fetch(PDO::FETCH_OBJ);
+}
+
 
 
 private function isEmailExist($useremail){
