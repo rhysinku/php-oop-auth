@@ -1,6 +1,17 @@
+<?php 
+require_once 'init.php';
+
+?>
+
 <?php include('includes/Header.php') ?>
 <?php include('includes/Navigation.php') ?>
 
+
+<?php
+
+
+
+?>
 
 <main>
     <div class="wrapper">
@@ -12,12 +23,12 @@
 
                 <div class="input_form">
                     <span>Username</span>
-                    <input type="text" name="name">
+                    <input type="text" name="name" required>
                 </div>
 
                 <div class="input_form">
                     <span>Password</span>
-                    <input type="text" name="password">
+                    <input type="text" name="password" required>
                 </div>
 
                 <button class="btn">
