@@ -14,8 +14,25 @@ function validateInputs($inputData , $requiredFields){
     }
 
     return [
+        'status'=> !empty($errors),
         'data' => $processedData,
         'errors' => $errors
     ];
 
 }
+
+
+
+    function isEmptyInput($inputFields){
+        $errors  = [];
+        foreach($inputFields as $input){
+          if (empty($input))  {
+            $errors[] = ucfirst($input) . ' is required';
+          }
+        }    
+
+        return [
+            'status' => !empty($errors),
+            'errors' => $errors
+        ];
+    }

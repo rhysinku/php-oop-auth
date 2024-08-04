@@ -9,29 +9,47 @@ require_once dirname(__DIR__).'/Util/auth.util.php';
 
 
 <?php
+// With Validation
+// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//     $requiredFields = ['username', 'email', 'password', 'confirmpassword'];
+//     $validate = validateInputs($_POST, $requiredFields);
 
+//     $processedData = $validate['data'];
+//     $errors = $validate['errors'];
+
+//     if (!empty($errors)) {
+//         foreach ($errors as $error) {
+//             echo "<p>Error: $error</p>";
+//         }
+//     } else {
+//         $username = $processedData['username'];
+//         $email = $processedData['email'];
+//         $password = $processedData['password'];
+//         $confirmpassword = $processedData['confirmpassword'];
+
+//         $auth = new AuthController();
+//         $result = $auth->register($username, $email, $password, $confirmpassword);
+//     }
+// }
+
+// With Out Validation
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $requiredFields = ['username', 'email', 'password', 'confirmpassword'];
-    $validate = validateInputs($_POST, $requiredFields);
 
-    $processedData = $validate['data'];
-    $errors = $validate['errors'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmpassword = $_POST['confirmpassword'];
 
-    if (!empty($errors)) {
-        foreach ($errors as $error) {
-            echo "<p>Error: $error</p>";
-        }
-    } else {
-        $username = $processedData['username'];
-        $email = $processedData['email'];
-        $password = $processedData['password'];
-        $confirmpassword = $processedData['confirmpassword'];
-
-        $auth = new AuthController();
-        $result = $auth->register($username, $email, $password, $confirmpassword);
-
-        echo "<p>$result</p>";
+    $auth = new AuthController();
+    $result = $auth->register($username , $email , $password ,$confirmpassword);
+    if($result){
+        echo var_dump($result);
+    }else{
+        echo 'User Not Created';
     }
+
+
+
 }
 
 ?>
