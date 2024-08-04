@@ -18,13 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     $auth = new AuthController();
-    if($auth->register($username , $email , $password )){
-        header('Location: login.php');
+    $result = $auth->register($username , $email , $password );
+    if($result){
+       var_dump($result);
     }else{
         echo 'User Not Created';
     }
-    
-    
     
 }
 
