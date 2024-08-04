@@ -22,5 +22,14 @@ public function  Register ($username , $useremail , $userpassword){
     }
     
 }
+
+
+
+private function isEmailExist($useremail){
+    
+    $sql = "SELECT email FROM user WHERE email = ? ";
+    
+
+}
     
 }

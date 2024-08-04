@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $auth = new AuthController();
     if($auth->register($username , $email , $password )){
-        echo 'User created successfully';
+        header('Location: login.php');
     }else{
         echo 'User Not Created';
     }
