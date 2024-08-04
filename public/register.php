@@ -48,8 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo 'User Not Created';
     }
 
-
-
 }
 
 ?>
@@ -65,22 +63,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <div class="input_form">
                     <span>Username</span>
-                    <input type="text" name="username">
+                    <input type="text" name="username" required>
                 </div>
 
                 <div class="input_form">
                     <span>Email Address</span>
-                    <input type="text" name="email">
+                    <input type="text" name="email" required>
                 </div>
 
                 <div class="input_form">
                     <span>Password</span>
-                    <input type="text" name="password">
+                    <input type="text" name="password" required>
                 </div>
 
                 <div class="input_form">
                     <span>Confirm Password</span>
-                    <input type="text" name="confirmpassword">
+                    <input type="text" name="confirmpassword" required>
                 </div>
 
                 <button class="btn">

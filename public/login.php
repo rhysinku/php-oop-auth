@@ -9,6 +9,21 @@ require_once 'init.php';
 
 <?php
 
+if($_SERVER['REQUEST_METHOD']== 'POST'){
+    $useremail = $_POST['email'];
+    $userpassword = $_POST['password'];
+
+    $auth = new AuthController();
+    $result =  $auth->login($useremail, $userpassword);
+    
+    if($result){
+        echo var_dump($result);
+    }else{
+        echo "Login Failed";
+    }
+    
+}
+
 
 
 ?>
@@ -19,16 +34,16 @@ require_once 'init.php';
 
             <h1>Login Here</h1>
 
-            <form action="" class="form">
+            <form action="" class="form" method="POST">
 
                 <div class="input_form">
-                    <span>Username</span>
-                    <input type="text" name="name" required>
+                    <span>Email</span>
+                    <input type="text" name="email">
                 </div>
 
                 <div class="input_form">
                     <span>Password</span>
-                    <input type="text" name="password" required>
+                    <input type="text" name="password">
                 </div>
 
                 <button class="btn">

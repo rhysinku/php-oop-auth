@@ -31,18 +31,22 @@ class User extends Database {
 }
 
 public function login ($useremail , $userpassword){
-    $sql = "SELECT * FROM user where username = ?";
+    $sql = "SELECT * FROM user where email = ?";
     $stmt = $this->dbh->prepare($sql); 
     $stmt->execute(array($useremail));
     $user = $stmt->fetch(PDO::FETCH_OBJ);
 
-    if($user && password_verify($userpassword , $user->password)){
+    if($user){
+        
+    if (password_verify($userpassword, $user->password)) {
         $_SESSION['user_id'] = $user->id;
-        return "Login Success";
+        return  $user;
+        }else{
+            return "Password MisMatch";  
+         }
+    }else{
+        return "User Not Found in Backend";     
     }
-
-    return "User Not Found"; 
-    
 }
 
 
@@ -58,9 +62,5 @@ private function isEmailExist($useremail){
 
 }
 
-
-
-
-
-    
+ 
 }

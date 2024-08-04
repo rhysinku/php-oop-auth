@@ -17,7 +17,7 @@ class AuthController{
             return $checkfield;
         }
 
-        if(isPasswordMatch($userpassword , $confirmpassword)){
+        if(!isPasswordMatch($userpassword , $confirmpassword)){
             return 'Password MisMatch';
         }
         return $this->user->register($username , $useremail, $userpassword);

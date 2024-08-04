@@ -39,8 +39,5 @@ function validateInputs($inputData , $requiredFields){
     
      function isPasswordMatch($userpassword , $userconfirmpassword){
 
-        if($userpassword != $userconfirmpassword){
-            return false;
-        }
-        return true;
+        return $userpassword != $userconfirmpassword ? false : true;
     }
