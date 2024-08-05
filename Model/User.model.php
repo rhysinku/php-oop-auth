@@ -34,17 +34,14 @@ public function login ($useremail , $userpassword){
     $stmt->execute(array($useremail));
     $user = $stmt->fetch(PDO::FETCH_OBJ);
 
-    if($user){
-        
-    if (password_verify($userpassword, $user->password)) {
+    if($user && password_verify($userpassword, $user->password)){
+
         $_SESSION['user_id'] = $user->id;
-        return  $user;
-        }else{
-            return "Password MisMatch";  
-         }
-    }else{
-        return "User Not Found in Backend";     
+        return  header("location: profile.php");
+       
     }
+        return "User Not Found in Backend";     
+   
 }
 
 public function getUser($id) {

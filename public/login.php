@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     $result =  $auth->login($useremail, $userpassword);
     
     if($result){
-        header("location: profile.php");
+        return $result;
     }else{
         echo "Login Failed";
     }
