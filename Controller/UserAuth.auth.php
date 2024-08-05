@@ -32,9 +32,12 @@ class AuthController{
         if($checkfield['status'] == true){
             return $checkfield;
         }
-        return $this->user->login($useremail , $password);
-        
-        
+        return $this->user->login($useremail , $password);     
+    }
+
+    // Auth For Logout
+    public function logout(){
+        session_destroy();
     }
 
     // Auth For Getting the User
