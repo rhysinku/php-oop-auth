@@ -7,8 +7,6 @@ class User extends Database {
         $this->connect();
     }
 
-
- 
     
     public function  register ($username , $useremail , $userpassword){
     $sql = "INSERT INTO users (username, email, password) VALUES (? , ? , ?) ";
@@ -60,7 +58,7 @@ public function getUser($id) {
 
 private function isEmailExist($useremail){
     
-    $sql = "SELECT email FROM user WHERE email = ? ";
+    $sql = "SELECT email FROM users WHERE email = ? ";
     $stmt = $this->dbh->prepare($sql);
     $stmt->execute(array($useremail));
     $result = $stmt->fetch(PDO::FETCH_OBJ);
