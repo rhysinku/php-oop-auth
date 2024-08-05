@@ -11,7 +11,7 @@ class User extends Database {
  
     
     public function  register ($username , $useremail , $userpassword){
-    $sql = "INSERT INTO user (username, email, password) VALUES (? , ? , ?) ";
+    $sql = "INSERT INTO users (username, email, password) VALUES (? , ? , ?) ";
     $stmt = $this->dbh->prepare($sql);
     $hashPassowrd = password_hash($userpassword , PASSWORD_BCRYPT);
 
@@ -31,7 +31,7 @@ class User extends Database {
 }
 
 public function login ($useremail , $userpassword){
-    $sql = "SELECT * FROM user where email = ?";
+    $sql = "SELECT * FROM users where email = ?";
     $stmt = $this->dbh->prepare($sql); 
     $stmt->execute(array($useremail));
     $user = $stmt->fetch(PDO::FETCH_OBJ);
@@ -50,7 +50,7 @@ public function login ($useremail , $userpassword){
 }
 
 public function getUser($id) {
-    $sql = "SELECT * FROM user WHERE id = ?";
+    $sql = "SELECT * FROM users WHERE id = ?";
     $stmt = $this->dbh->prepare($sql); 
     $stmt->execute([$id]);
     return $stmt->fetch(PDO::FETCH_OBJ);
