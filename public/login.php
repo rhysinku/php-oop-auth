@@ -8,6 +8,8 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     $useremail = $_POST['email'];
     $userpassword = $_POST['password'];
 
+  if(!$useremail == null || !$userpassword == null){
+
     $auth = new AuthController();
     $result =  $auth->login($useremail, $userpassword);
     
@@ -16,6 +18,8 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     }else{
         echo "Login Failed";
     }
+
+  }
 }
 ?>
 
@@ -29,12 +33,12 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 
                 <div class="input_form">
                     <span>Email</span>
-                    <input type="text" name="email">
+                    <input type="text" name="email" required>
                 </div>
 
                 <div class="input_form">
                     <span>Password</span>
-                    <input type="text" name="password">
+                    <input type="text" name="password" required>
                 </div>
 
                 <button class="btn">
