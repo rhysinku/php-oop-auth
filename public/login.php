@@ -15,9 +15,9 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     $result =  $auth->login($useremail, $userpassword);
     
     if($result){
-        return $result;
+        echo $result;
     }else{
-       return $result;
+        echo $result;
     }
   }
 }

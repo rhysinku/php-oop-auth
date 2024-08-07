@@ -33,7 +33,7 @@ class AuthController{
             if($checkfield['status'] == true){
                 return $checkfield;
             }
-             $result =  $this->user->login($useremail , $password);   
+            $result = $this->user->login($useremail , $password);   
             return $result;
         }
         catch(PDOException $e){
