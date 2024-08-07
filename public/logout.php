@@ -8,7 +8,7 @@ if($auth->logout()){
  header("location: login.php");
  exit();
 }
-header("location: login.php");
+header("location: profile.php");
 exit();
 
 
