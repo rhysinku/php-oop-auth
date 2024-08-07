@@ -55,6 +55,9 @@ a.btn:hover{
   text-decoration: none;
 }
 
+html .block{display: block;}
+html .hidden{display: none;}
+
 
 /*  */
 .header_con{
@@ -63,6 +66,8 @@ a.btn:hover{
     align-items: center;
     padding-block: 25px;
 }
+#modal_close{cursor: pointer;}
+#modal_close:hover{background: var(--primary-color);}
 
 .header-nav{}
 .header-nav ul{display: flex; gap: 5px;}
@@ -82,6 +87,7 @@ a.btn:hover{
 .form p a{}
 .form p a:hover{text-decoration: underline;}
 
+.form__btn_con{display: flex; justify-content: space-between; align-items: center;}
 
 
 /* Profile */
@@ -89,3 +95,16 @@ a.btn:hover{
 .profile_con{margin-block: 25px;}
 .profile_con h1{font-size: 3rem; font-weight: 700; font-family: var(--priFont);}
 .profile_con__info{margin-block: 25px;}
+
+/* Modal Profile */
+.update_modal.block{display: flex;}
+.update_modal{position: fixed; width: 100%; height: 100%; top: 0; z-index: 1; background: #000000bd; display: none; align-items: center; justify-content: center;}
+.update_modal__box{max-width: 600px; width: 100%; background: #fff; border-radius: 25px; padding-block: 25px; padding-inline: 15px;}
+.update_modal__box form{margin-block: 25px;}
+
+.update_modal__header{display: flex; justify-content: space-between; margin-bottom: 15px; align-self: center;}
+.update_modal__header h3{}
+.update_modal__header span{}
+
+.update_modal__box{}
+.update_modal__box form{display: flex; flex-direction: column; row-gap: 15px;}
