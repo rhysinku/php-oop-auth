@@ -59,6 +59,7 @@ html .block{display: block;}
 html .hidden{display: none;}
 
 
+.flex-col { display: flex; gap: 5px; }
 /*  */
 .header_con{
     display: flex;
@@ -79,7 +80,7 @@ html .hidden{display: none;}
 .form_con{}
 .form_con h1{text-align: center; margin-bottom: 25px;}
 .form{max-width: 500px; width: 100%; margin-inline: auto; display: grid; row-gap: 10px;}
-.form .input_form{}
+.form .input_form{width: 100%;}
 .form .input_form input{padding-block: 10px; border-radius: 5px; border: 1px solid var(--gray);}
 .form .input_form span{margin-bottom: 5px; display: block;}
 .form button{}

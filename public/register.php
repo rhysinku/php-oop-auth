@@ -60,6 +60,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <form action="" class="form" method="POST">
 
+                <div class="input_form flex-col">
+                <div class="input_form"> <span>First Name</span> <input type="text" name="firstname" required> </div>
+                <div class="input_form"> <span>Last Name</span> <input type="text" name="lastname" required> </div>
+                </div>
                 <div class="input_form">
                     <span>Username</span>
                     <input type="text" name="username" required>
