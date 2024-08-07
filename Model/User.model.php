@@ -8,8 +8,8 @@ class User extends Database {
     }
 
     
-    public function  register ($username , $useremail , $userpassword){
-    $sql = "INSERT INTO users (username, email, password) VALUES (? , ? , ?) ";
+    public function  register ($username ,$firstname ,$lastname , $useremail , $userpassword){
+    $sql = "INSERT INTO users (username, firstname , lastname , email, password) VALUES (? , ? , ? , ? , ?) ";
     $stmt = $this->dbh->prepare($sql);
     $hashPassowrd = password_hash($userpassword , PASSWORD_BCRYPT);
 
@@ -20,7 +20,7 @@ class User extends Database {
             return  $isEmailExist;
          }
 
-        return $stmt->execute(array($username , $useremail , $hashPassowrd));
+        return $stmt->execute(array($username , $firstname ,$lastname , $useremail , $hashPassowrd));
         
     } catch (PDOException $e) {
        var_dump($e);

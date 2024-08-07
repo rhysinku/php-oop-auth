@@ -35,12 +35,14 @@ require_once dirname(__DIR__).'/Util/auth.util.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $username = $_POST['username'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirmpassword = $_POST['confirmpassword'];
 
     $auth = new AuthController();
-    $result = $auth->register($username , $email , $password ,$confirmpassword);
+    $result = $auth->register($username , $firstname, $lastname, $email , $password ,$confirmpassword);
     if($result){
         echo var_dump($result);
     }else{

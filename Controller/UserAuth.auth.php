@@ -10,8 +10,8 @@ class AuthController{
     }
 
     // Auth For Register User
-    public function register($username , $useremail, $userpassword , $confirmpassword){
-        $inputFields = [$username , $useremail, $userpassword , $confirmpassword];
+    public function register($username , $firstname ,$lastname ,  $useremail, $userpassword , $confirmpassword){
+        $inputFields = [$username ,$firstname ,$lastname ,  $useremail, $userpassword , $confirmpassword];
         $checkfield = isEmptyInput($inputFields);
 
         if($checkfield['status'] == true){
@@ -21,7 +21,7 @@ class AuthController{
         if(!isPasswordMatch($userpassword , $confirmpassword)){
             return 'Password MisMatch';
         }
-        return $this->user->register($username , $useremail, $userpassword);
+        return $this->user->register($username , $firstname ,$lastname , $useremail, $userpassword);
     }
 
   // Auth For Login User
