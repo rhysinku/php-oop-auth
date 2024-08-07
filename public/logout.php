@@ -1,8 +1,14 @@
 <?php 
-
+session_start();
 require_once dirname(__DIR__)."/Controller/UserAuth.auth.php";
 
 $auth = new AuthController();
-$auth->logout();
 
-return header("location: login.php");
+if($auth->logout()){
+ header("location: login.php");
+ exit();
+}
+header("location: login.php");
+exit();
+
+
