@@ -16,7 +16,7 @@ $currentUser =  $auth->getUser($_SESSION['user_id']);
         <h1>Welcome, <?php echo $currentUser->username; ?></h1>
         <p>Email: <?php echo $currentUser->email ?></p>
 
-        <button href="" class="btn">LogOut</button>
+        <a href="logout.php" class="btn">LogOut</a>
     </div>
 </main>
 
