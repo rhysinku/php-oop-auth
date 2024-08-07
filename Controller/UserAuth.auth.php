@@ -29,10 +29,15 @@ class AuthController{
         $inputFields = [$useremail , $password];
         $checkfield = isEmptyInput($inputFields);
 
-        if($checkfield['status'] == true){
-            return $checkfield;
+        try{
+            if($checkfield['status'] == true){
+                return $checkfield;
+            }
+            return $this->user->login($useremail , $password);     
         }
-        return $this->user->login($useremail , $password);     
+        catch(PDOException $e){
+            return $e->getMessage();
+        }
     }
 
     // Auth For Logout

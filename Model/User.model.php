@@ -40,7 +40,7 @@ public function login ($useremail , $userpassword){
         return  header("location: profile.php");
        
     }
-        return "User Not Found in Backend";     
+        return header("location: login.php");     
 }
 
 

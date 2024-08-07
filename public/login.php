@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     if($result){
         return $result;
     }else{
-        echo "Login Failed";
+        header('location: login.php');
     }
 
   }
