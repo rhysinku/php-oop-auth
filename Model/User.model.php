@@ -33,14 +33,15 @@ public function login ($useremail , $userpassword){
     $stmt = $this->dbh->prepare($sql); 
     $stmt->execute(array($useremail));
     $user = $stmt->fetch(PDO::FETCH_OBJ);
+    $result = "";
 
     if($user && password_verify($userpassword, $user->password)){
 
         $_SESSION['user_id'] = $user->id;
-        return  header("location: profile.php");
+        return  $result = "User Login";
        
     }
-        return header("location: login.php");     
+        return $result = "User Not Found";  
 }
 
 

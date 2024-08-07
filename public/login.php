@@ -8,17 +8,17 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     $useremail = $_POST['email'];
     $userpassword = $_POST['password'];
 
-  if(!$useremail == null || !$userpassword == null){
-
+  if(empty($useremail) || empty($userpassword)){
+    $error_msg = "Fill the Forms";
+  }else{
     $auth = new AuthController();
     $result =  $auth->login($useremail, $userpassword);
     
     if($result){
         return $result;
     }else{
-        header('location: login.php');
+       return $result;
     }
-
   }
 }
 ?>
