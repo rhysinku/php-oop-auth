@@ -14,7 +14,7 @@ $isLoggin = $authAccount->isLogin();
                 <?php if($isLoggin) : ?>
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="logout.php">Log Out</a></li>
-                <?php else: ?>
+                <?php else : ?>
                     <li><a href="register.php">Register</a></li>
                     <li><a href="login.php">Login</a></li>
                 <?php endif ?>
