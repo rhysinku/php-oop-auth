@@ -1,6 +1,6 @@
 <?php 
 
-class AuthMiddleWare{
+class AuthMiddleware{
 
     public static function checkAuth(){
         session_start();
