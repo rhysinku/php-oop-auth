@@ -2,13 +2,17 @@
 
 class AuthMiddleware{
 
+ 
+
     public static function checkAuth(){
-        session_start();
         if(!isset($_SESSION['user_id'])){
             header("Location: login.php");
             exit();
         }
-        
+    }
+
+    public function isLogin(){
+      return isset($_SESSION["user_id"]) ? true : false;
     }
 
 }

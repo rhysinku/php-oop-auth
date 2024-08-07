@@ -4,6 +4,8 @@
 
 
 <?php 
+AuthMiddleware::checkAuth();
+
 $auth = new AuthController();
 $currentUser =  $auth->getUser($_SESSION['user_id']);
 
