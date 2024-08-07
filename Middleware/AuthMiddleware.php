@@ -12,7 +12,7 @@ class AuthMiddleware{
     }
 
     public function isLogin(){
-      return isset($_SESSION["user_id"]) ? true : false;
+      return isset($_SESSION["user_id"]);
     }
 
 }
