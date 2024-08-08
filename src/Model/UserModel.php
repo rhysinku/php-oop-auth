@@ -5,8 +5,7 @@ namespace Model;
 use Database\Database;
 use PDOException;
 use PDO;
-// require_once dirname(__DIR__).'/src/Database/DatabaseDb.php';   
-// require_once dirname(__DIR__).'/src/Util/StatusMessageUtil.php';   
+
 
 class UserModel extends Database {
 

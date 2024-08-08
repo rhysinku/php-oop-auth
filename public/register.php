@@ -42,9 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $auth = new AuthController();
     $result = $auth->register($username , $firstname, $lastname, $email , $password ,$confirmpassword);
     if($result){
-        echo var_dump($result);
+        $error_msg= $result;
     }else{
-        echo 'User Not Created';
+        $error_msg= $result;
     }
 
 }
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <button class="btn">
                     Sign Up
                 </button>
-
+                <?php include('includes/DisplayStatus.php') ?>
                 <p>Already have an account? <a href="login.php">Log In</a></p>
             </form>
 

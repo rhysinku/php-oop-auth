@@ -3,8 +3,8 @@
 namespace Controllers;
 
 use Model\UserModel;
-use Util\StatusMesssage;
 use Util\Validation;
+use Util\StatusMesssage;
 use PDOException;
 
 class AuthController{
@@ -24,9 +24,16 @@ class AuthController{
         }
 
         if(!Validation::isPasswordMatch($userpassword , $confirmpassword)){
-            return 'Password MisMatch';
+            return new StatusMesssage('error' ,'Password MisMatch');
         }
-        return $this->user->register($username , $firstname ,$lastname , $useremail, $userpassword);
+         $registrationSuccess = $this->user->register($username , $firstname ,$lastname , $useremail, $userpassword);
+
+         if($registrationSuccess){
+            return new StatusMesssage('success','Register Succesfully');
+         }else{
+            return new StatusMesssage('error','Register Failed');
+         }
+        
     }
 
   // Auth For Login User
