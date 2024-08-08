@@ -31,10 +31,13 @@ class AuthController{
 
         try{
             if($checkfield['status'] == true){
-                return $checkfield;
+                return new StatusMesssage('error' , 'Please fill in all fields');
             }
-            $result = $this->user->login($useremail , $password);   
-            return $result;
+           if($this->user->login($useremail , $password)){
+            return new StatusMesssage('ok','User Logged in succesfully');
+           }else{
+            return new StatusMesssage('error','Invalid Email or Password');
+           }
         }
         catch(PDOException $e){
             return $e->getMessage();

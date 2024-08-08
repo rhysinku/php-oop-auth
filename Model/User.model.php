@@ -1,6 +1,7 @@
 <?php 
 
 require_once dirname(__DIR__).'/Database/Database.class.php';   
+require_once dirname(__DIR__).'/Util/StatusMessage.class.php';   
 class User extends Database {
 
     public function __construct(){
@@ -33,15 +34,14 @@ public function login ($useremail , $userpassword){
     $stmt = $this->dbh->prepare($sql); 
     $stmt->execute(array($useremail));
     $user = $stmt->fetch(PDO::FETCH_OBJ);
-    $result = "";
 
     if($user && password_verify($userpassword, $user->password)){
 
         $_SESSION['user_id'] = $user->id;
-        return  $result = "User Login";
+        return  true;
        
     }
-        return $result = "User Not Found";  
+        return false;  
 }
 
 

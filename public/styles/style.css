@@ -68,7 +68,7 @@ html .hidden{display: none;}
     padding-block: 25px;
 }
 #modal_close{cursor: pointer;}
-#modal_close:hover{background: var(--primary-color);}
+#modal_close:hover{color: var(--primary-color);}
 
 .header-nav{}
 .header-nav ul{display: flex; gap: 5px;}
