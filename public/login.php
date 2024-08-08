@@ -4,6 +4,8 @@
 
 <?php
 
+
+
 if($_SERVER['REQUEST_METHOD']== 'POST'){
     $useremail = $_POST['email'];
     $userpassword = $_POST['password'];
@@ -14,10 +16,10 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     $auth = new AuthController();
     $result =  $auth->login($useremail, $userpassword);
     
-    if($result){
-        echo $result;
+    if($result->status == "ok"){
+        header("location: profile.php");
     }else{
-        echo $result;
+        $error_msg= $result;
     }
   }
 }
@@ -47,6 +49,9 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 
                 <p>Dont have an account? <a href="register.php">Register Here</a></p>
             </form>
+    <?php if(!empty($error_msg)) : ?>
+        <p class="err"><?php echo htmlspecialchars($error_msg->message); ?></p>
+    <?php endif ?>
 
         </div>
     </div>

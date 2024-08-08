@@ -58,6 +58,7 @@ a.btn:hover{
 html .block{display: block;}
 html .hidden{display: none;}
 
+.err{color:red; font-style: italic; margin-block: 15px; text-align: center;}
 
 .flex-col { display: flex; gap: 5px; }
 /*  */
