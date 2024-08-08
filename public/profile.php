@@ -4,6 +4,10 @@
 
 
 <?php 
+
+use Middleware\AuthMiddleware;
+use Controllers\AuthController;
+
 AuthMiddleware::checkAuth();
 
 $auth = new AuthController();

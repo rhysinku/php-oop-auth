@@ -1,12 +1,16 @@
 <?php
-require_once dirname(__DIR__).'/Model/User.model.php';
-require_once dirname(__DIR__).'/Util/auth.util.php'; 
+
+namespace Controllers;
+
+use Model\UserModel;
+use Util\StatusMesssage;
+use PDOException;
 
 class AuthController{
     private $user;
 
     public function __construct(){
-        $this->user = new User();
+        $this->user = new UserModel();
     }
 
     // Auth For Register User

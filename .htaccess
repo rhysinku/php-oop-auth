@@ -1,13 +1,3 @@
-# # .htaccess
-
-
-# RewriteEngine On
-
-# # Redirect all requests to the public directory
-# RewriteRule ^$ public/index.php [L]
-# RewriteRule (.*) public/$1 [L]
-
-
 RewriteEngine On
 
 # Redirect all requests to the public directory

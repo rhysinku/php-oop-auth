@@ -1,5 +1,5 @@
 <?php 
-
+namespace Util;
 class StatusMesssage {
 
     public $status;

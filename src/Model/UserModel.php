@@ -1,8 +1,14 @@
 <?php 
 
-require_once dirname(__DIR__).'/Database/Database.class.php';   
-require_once dirname(__DIR__).'/Util/StatusMessage.class.php';   
-class User extends Database {
+namespace Model;
+
+use Database\Database;
+use PDOException;
+use PDO;
+// require_once dirname(__DIR__).'/src/Database/DatabaseDb.php';   
+// require_once dirname(__DIR__).'/src/Util/StatusMessageUtil.php';   
+
+class UserModel extends Database {
 
     public function __construct(){
         $this->connect();
@@ -45,7 +51,7 @@ public function login ($useremail , $userpassword){
 }
 
 public function updateUser ($username ,$firstname ,$lastname , $useremail , $userpassword){
-    
+    $sql = "";
 }
 
 

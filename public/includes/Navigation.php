@@ -1,5 +1,5 @@
 <?php 
-
+use Middleware\AuthMiddleware;
 $authAccount = new AuthMiddleware();
 $isLoggin = $authAccount->isLogin(); 
 

@@ -1,7 +1,10 @@
-<?php
-session_start();
-require_once dirname(__DIR__). '/Middleware/AuthMiddleware.php';
+<?php include('includes/Header.php') ?>
+<?php include('includes/Navigation.php') ?>
 
+
+
+<?php 
+use Middleware\AuthMiddleware;
 
 $auth = new AuthMiddleware();
 $status = $auth->isLogin();
@@ -13,5 +16,6 @@ $status = $auth->isLogin();
 
     header("location: login.php");
     exit();
- 
- 
+
+    
+?>
