@@ -35,6 +35,8 @@ require_once dirname(__DIR__).'/Util/auth.util.php';
 // }
 
 // With Out Validation
+use Controllers\AuthController;
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $username = $_POST['username'];
