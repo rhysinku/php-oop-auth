@@ -44,6 +44,10 @@ public function login ($useremail , $userpassword){
         return false;  
 }
 
+public function updateUser ($username ,$firstname ,$lastname , $useremail , $userpassword){
+    
+}
+
 
 
 

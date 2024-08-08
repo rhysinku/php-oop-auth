@@ -15,7 +15,7 @@ class AuthController{
         $checkfield = isEmptyInput($inputFields);
 
         if($checkfield['status'] == true){
-            return $checkfield;
+            return new StatusMesssage('error' , 'Please fill in all fields');
         }
 
         if(!isPasswordMatch($userpassword , $confirmpassword)){
