@@ -4,6 +4,7 @@ namespace Controllers;
 
 use Model\UserModel;
 use Util\StatusMesssage;
+use Util\Validation;
 use PDOException;
 
 class AuthController{
@@ -16,13 +17,13 @@ class AuthController{
     // Auth For Register User
     public function register($username , $firstname ,$lastname ,  $useremail, $userpassword , $confirmpassword){
         $inputFields = [$username ,$firstname ,$lastname ,  $useremail, $userpassword , $confirmpassword];
-        $checkfield = isEmptyInput($inputFields);
+        $checkfield = Validation::isEmptyInput($inputFields);
 
         if($checkfield['status'] == true){
             return new StatusMesssage('error' , 'Please fill in all fields');
         }
 
-        if(!isPasswordMatch($userpassword , $confirmpassword)){
+        if(!Validation::isPasswordMatch($userpassword , $confirmpassword)){
             return 'Password MisMatch';
         }
         return $this->user->register($username , $firstname ,$lastname , $useremail, $userpassword);
@@ -31,7 +32,7 @@ class AuthController{
   // Auth For Login User
     public function login($useremail , $password){
         $inputFields = [$useremail , $password];
-        $checkfield = isEmptyInput($inputFields);
+        $checkfield = Validation::isEmptyInput($inputFields);
 
         try{
             if($checkfield['status'] == true){

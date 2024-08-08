@@ -1,6 +1,7 @@
 <?php 
 session_start();
-require_once dirname(__DIR__)."/Controller/UserAuth.auth.php";
+require_once __DIR__ . '/../autoload.php';
+use Controllers\AuthController;
 
 $auth = new AuthController();
 
