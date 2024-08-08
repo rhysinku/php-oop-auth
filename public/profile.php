@@ -18,6 +18,19 @@ $currentUser =  $auth->getUser($_SESSION['user_id']);
     </div>
 
     <form class="form" action="" method="PUT">
+
+        <div class="flex-col">
+        <div class="input_form">
+            <span>First Name</span>
+             <input name="firstname" type="text" value="<?php echo $currentUser->firstname; ?>" placeholder="New Firstname">
+        </div>
+
+        <div class="input_form">
+            <span>Last Name</span>
+             <input name="last" type="text" value="<?php echo $currentUser->lastname; ?>" placeholder="New Lastname">
+        </div>
+        </div>
+
         <div class="input_form">
             <span>Username</span>
              <input name="username" type="text" value="<?php echo $currentUser->username; ?>" placeholder="New Username">
@@ -36,7 +49,7 @@ $currentUser =  $auth->getUser($_SESSION['user_id']);
         </div>
 
         <div class="form__btn_con">
-        <button class="btn">Update</button>
+        <button type="submit" class="btn">Update</button>
         <button class="btn">Close</button>
         </div>
     
@@ -51,6 +64,8 @@ $currentUser =  $auth->getUser($_SESSION['user_id']);
     <div class="profile_con">
     <h1>Welcome, <?php echo $currentUser->username; ?></h1>
        <div class="profile_con__info">
+       <p>First Name: <span> <?php echo $currentUser->firstname ?> </span></p>
+       <p>Last Name: <span> <?php echo $currentUser->lastname ?> </span></p>
        <p>Email: <a href="mailto:<?php echo $currentUser->email ?>"><?php echo $currentUser->email ?></a></p>
        </div>
 
