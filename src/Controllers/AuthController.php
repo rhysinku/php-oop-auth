@@ -4,7 +4,7 @@ namespace Controllers;
 
 use Model\UserModel;
 use Util\Validation;
-use Util\StatusMesssage;
+use Util\StatusMessage;
 use PDOException;
 
 class AuthController{
@@ -20,18 +20,18 @@ class AuthController{
         $checkfield = Validation::isEmptyInput($inputFields);
 
         if($checkfield['status'] == true){
-            return new StatusMesssage('error' , 'Please fill in all fields');
+            return new StatusMessage('error' , 'Please fill in all fields');
         }
 
         if(!Validation::isPasswordMatch($userpassword , $confirmpassword)){
-            return new StatusMesssage('error' ,'Password MisMatch');
+            return new StatusMessage('error' ,'Password MisMatch');
         }
          $registrationSuccess = $this->user->register($username , $firstname ,$lastname , $useremail, $userpassword);
 
          if($registrationSuccess){
-            return new StatusMesssage('success','Register Succesfully');
+            return new StatusMessage('success','Register Succesfully');
          }else{
-            return new StatusMesssage('error','Register Failed');
+            return new StatusMessage('error','Register Failed');
          }
         
     }
@@ -43,12 +43,12 @@ class AuthController{
 
         try{
             if($checkfield['status'] == true){
-                return new StatusMesssage('error' , 'Please fill in all fields');
+                return new StatusMessage('error' , 'Please fill in all fields');
             }
            if($this->user->login($useremail , $password)){
-            return new StatusMesssage('ok','User Logged in succesfully');
+            return new StatusMessage('ok','User Logged in succesfully');
            }else{
-            return new StatusMesssage('error','Invalid Email or Password');
+            return new StatusMessage('error','Invalid Email or Password');
            }
         }
         catch(PDOException $e){

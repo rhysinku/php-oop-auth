@@ -1,6 +1,6 @@
 <?php 
 namespace Util;
-class StatusMesssage {
+class StatusMessage {
 
     public $status;
     public $message;

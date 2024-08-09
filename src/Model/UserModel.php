@@ -37,7 +37,7 @@ class UserModel extends Database {
 public function login ($useremail , $userpassword){
     $sql = "SELECT * FROM users where email = ?";
     $stmt = $this->dbh->prepare($sql); 
-    $stmt->execute(array($useremail));
+    $stmt->execute([$useremail]);
     $user = $stmt->fetch(PDO::FETCH_OBJ);
 
     if($user && password_verify($userpassword, $user->password)){
