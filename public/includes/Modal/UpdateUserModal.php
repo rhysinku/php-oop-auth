@@ -8,7 +8,7 @@
     <h3>Update your Profile</h3> <span id="modal_close">&#10006;</span>
     </div>
 
-    <form class="form" action="" method="PUT">
+    <form class="form" action="func/auth-process.php" method="POST">
 
         <div class="flex-col">
         <div class="input_form">
