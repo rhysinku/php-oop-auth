@@ -50,6 +50,8 @@ public function login ($useremail , $userpassword){
 }
 
 public function updateUser ($username ,$firstname ,$lastname , $useremail , $userpassword = null){
+
+
     if($userpassword){
         $hashPassword = password_hash($userpassword , PASSWORD_BCRYPT);
         $sql = "UPDATE users SET username = ? , firstname = ? , lastname = ?, email = ? , password = ?  WHERE id = ?";

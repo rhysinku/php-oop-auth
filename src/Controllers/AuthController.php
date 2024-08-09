@@ -56,6 +56,14 @@ class AuthController{
         }
     }
 
+    // Auth For Update User
+    public function updateUser($data){
+
+
+        // return $this->user->updateUser($data);
+
+    }
+
     // Auth For Logout
     public function logout(){
         session_destroy();

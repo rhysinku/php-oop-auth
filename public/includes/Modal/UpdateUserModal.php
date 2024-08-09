@@ -9,7 +9,7 @@
     </div>
 
     <form class="form" action="func/auth-process.php" method="POST">
-
+          <input type="hidden" name="action" value="updateUser">
         <div class="flex-col">
         <div class="input_form">
             <span>First Name</span>
@@ -18,7 +18,7 @@
 
         <div class="input_form">
             <span>Last Name</span>
-             <input name="last" type="text" value="<?php echo $currentUser->lastname; ?>" placeholder="New Lastname">
+             <input name="lastname" type="text" value="<?php echo $currentUser->lastname; ?>" placeholder="New Lastname">
         </div>
         </div>
 
