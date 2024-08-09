@@ -49,8 +49,17 @@ public function login ($useremail , $userpassword){
         return false;  
 }
 
-public function updateUser ($username ,$firstname ,$lastname , $useremail , $userpassword){
-    $sql = "";
+public function updateUser ($username ,$firstname ,$lastname , $useremail , $userpassword = null){
+    if($userpassword){
+        $hashPassword = password_hash($userpassword , PASSWORD_BCRYPT);
+        $sql = "UPDATE users SET username = ? , firstname = ? , lastname = ?, email = ? , password = ?  WHERE id = ?";
+        $stmt = $this->dbh->prepare($sql);
+        return $stmt->execute([$username ,$firstname ,$lastname , $useremail , $hashPassword ]);
+    }else{
+        $sql = "UPDATE users SET username = ? , firstname = ?, lastname = ? , email = ? WHERE id = ?";
+        $stmt = $this->dbh->prepare($sql);
+        return $stmt->execute([$username ,$firstname ,$lastname , $useremail , ]);
+    }
 }
 
 
