@@ -11,6 +11,7 @@ updateUser.addEventListener("submit", async (e) => {
   if (password !== confirmpassword) {
     e.stopPropagation();
     updateUser.classList.add("error-password");
+    return;
   } else {
     e.stopPropagation();
     updateUser.classList.remove("error-password");
@@ -26,9 +27,6 @@ updateUser.addEventListener("submit", async (e) => {
     if (!data.ok) {
       console.log(`Cannot Connect to File: ${data.status}`);
     }
-
-    const result = await data.text();
-    console.log(result);
   } catch (error) {
     console.log(error);
   }
