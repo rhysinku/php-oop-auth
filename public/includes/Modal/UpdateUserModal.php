@@ -30,11 +30,11 @@
             </div>
             <div class="input_form">
                 <span>Password</span>
-                <input name="password" type="text" placeholder="New Password">
+                <input name="password" type="password" placeholder="New Password">
             </div>
             <div class="input_form">
                 <span>Confirm Password</span>
-                <input name="confirmpassword" type="text" placeholder="Confirm New Password">
+                <input name="confirmpassword" type="password" placeholder="Confirm New Password">
             </div>
             <div class="form__btn_con">
                 <button type="submit" class="btn">Update</button>

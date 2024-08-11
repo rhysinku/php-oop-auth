@@ -15,10 +15,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
    $lastname = $_POST['lastname'];
    $email = $_POST['email'];
    $password = $_POST['password'];
+        
+   
+
     }
     
     
-//     $statusMessage = '';
 
 // $action = $_POST['edit'];
 //     switch($action){
