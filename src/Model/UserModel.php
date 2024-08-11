@@ -49,18 +49,27 @@ public function login ($useremail , $userpassword){
         return false;  
 }
 
-public function updateUser ($username ,$firstname ,$lastname , $useremail , $userpassword = null){
-
-
+public function updateUser ($userid, $username ,$firstname ,$lastname , $useremail , $userpassword = null ){
+    $findUser = "SELECT id FROM users WHERE id = ?";
+    $findUserStmt = $this->dbh->prepare($findUser);
+    $findUserStmt->execute([$userid]);
+    $user = $findUserStmt->fetch(PDO::FETCH_OBJ);
+    $getUserId = $user->id;
+    
+    if(!$user){
+        return false;
+    }
     if($userpassword){
         $hashPassword = password_hash($userpassword , PASSWORD_BCRYPT);
         $sql = "UPDATE users SET username = ? , firstname = ? , lastname = ?, email = ? , password = ?  WHERE id = ?";
         $stmt = $this->dbh->prepare($sql);
-        return $stmt->execute([$username ,$firstname ,$lastname , $useremail , $hashPassword ]);
+         $stmt->execute([$username ,$firstname ,$lastname , $useremail , $hashPassword ,  $getUserId  ]);
+         return 'Password Change';
     }else{
         $sql = "UPDATE users SET username = ? , firstname = ?, lastname = ? , email = ? WHERE id = ?";
         $stmt = $this->dbh->prepare($sql);
-        return $stmt->execute([$username ,$firstname ,$lastname , $useremail , ]);
+        $stmt->execute([$username ,$firstname ,$lastname , $useremail , $getUserId ]);
+        return "Password Not Change";
     }
 }
 
@@ -85,7 +94,6 @@ private function isEmailExist($useremail){
     $result = $stmt->fetch(PDO::FETCH_OBJ);
 
     return $result;
-
 }
 
  

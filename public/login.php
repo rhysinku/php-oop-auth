@@ -49,9 +49,9 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 
                 <p>Dont have an account? <a href="register.php">Register Here</a></p>
             </form>
-    <?php if(!empty($error_msg)) : ?>
-        <p class="err"><?php echo htmlspecialchars($error_msg->message); ?></p>
-    <?php endif ?>
+            <?php if(!empty($error_msg)) : ?>
+            <p class="err"><?php echo htmlspecialchars($error_msg->message); ?></p>
+            <?php endif ?>
 
         </div>
     </div>

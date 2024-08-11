@@ -57,11 +57,9 @@ class AuthController{
     }
 
     // Auth For Update User
-    public function updateUser($data){
-
-
-        // return $this->user->updateUser($data);
-
+    public function updateUser($userId , $username, $firstname , $lastname , $email, $password){
+       $result =  $this->user->updateUser($userId , $username, $firstname , $lastname , $email, $password);
+         return $result;
     }
 
     // Auth For Logout

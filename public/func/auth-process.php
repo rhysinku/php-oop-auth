@@ -1,10 +1,10 @@
 <?php 
-
+require_once __DIR__ . '/../../autoload.php';
 
 use Util\StatusMessage;
-// use Controllers\AuthController;
-// $auth = new AuthController();
-
+use Controllers\AuthController;
+$auth = new AuthController();
+session_start();
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     $statusMessage = '';
@@ -13,30 +13,34 @@ $action = $_POST['action'];
     switch($action){
 
         case 'updateUser':
-
-           $password = $_POST['password'];
+            $userId = $_SESSION['user_id'];
+            $username = $_POST['username'];
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            
            $confirmpassword = $_POST['confirmpassword'];
             if($password === $confirmpassword){
-
              $matchPassword = $password;
-             $data = [
-                'username' => $_POST['username'],
-                "firstname" => $_POST['firstname'],
-                "lastname" => $_POST['lastname'],
-                'email' => $_POST['email'],
-                'password' => $matchPassword,
-               ];
-
-               ['username' => $username] = $data;
-               echo $username;
+             $result = $auth->updateUser($userId, $username, $firstname, $lastname, $email, $password);
+            if($result){
+                echo $result;
+                break;
+            }else{
+                echo "Error in Sending";
+                break;
+            }
 
             }else{
                 $statusMessage = new StatusMessage('error', 'Check Your Password');
+                echo "You add Password but not match";
+                break;
             }
-            break;
         
         default:
             $statusMessage = new StatusMessage('error', 'No Form Connected');
+            echo "You add Password but not match";
             break;
     }
 }
