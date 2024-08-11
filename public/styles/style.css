@@ -340,3 +340,17 @@ html .hidden {
   flex-direction: column;
   row-gap: 15px;
 }
+
+.contact__layout {
+  margin-block: 25px;
+  min-height: 600px;
+}
+
+.contact__title {
+  text-align: center;
+  margin-block: 25px;
+}
+
+.contact__title h1 {
+  font-size: 4rem;
+}

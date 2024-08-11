@@ -39,4 +39,5 @@ $currentUser =  $auth->getUser($_SESSION['user_id']);
     </div>
 </main>
 
+<?php include('includes/Contact/ContactLayout.php') ?>
 <?php include('includes/Footer.php') ?>
