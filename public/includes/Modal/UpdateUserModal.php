@@ -4,8 +4,7 @@
             <h3>Update your Profile</h3> <span id="modal_close">&#10006;</span>
         </div>
 
-        <form class="form" action="func/auth-process.php" method="POST">
-            <input type="hidden" name="action" value="updateUser">
+        <form class="form" id="updateUser">
             <div class="flex-col">
                 <div class="input_form">
                     <span>First Name</span>
