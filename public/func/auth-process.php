@@ -15,11 +15,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
    $lastname = $_POST['lastname'];
    $email = $_POST['email'];
    $password = $_POST['password'];
-        
-   
+   $confirmpassword = $_POST['confirmpassword'];
 
+   if($password === $confirmpassword){
+    $matchPassword = $password;
+    $result = $auth->updateUser($userId, $username, $firstname, $lastname, $email, $password);
+         if($result){
+             return new StatusMessage('success', $result);
+          }else{
+            return new StatusMessage('error', 'Error in Sending');
+        }
     }
-    
+}
+
+}
     
 
 // $action = $_POST['edit'];
@@ -56,4 +65,3 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 //             echo "You add Password but not match";
 //             break;
 //     }
-}

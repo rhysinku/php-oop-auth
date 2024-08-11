@@ -1,4 +1,3 @@
-
 <?php include('includes/Header.php') ?>
 <?php include('includes/Navigation.php') ?>
 
@@ -61,8 +60,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <form action="" class="form" method="POST">
 
                 <div class="input_form flex-col">
-                <div class="input_form"> <span>First Name</span> <input type="text" name="firstname" required> </div>
-                <div class="input_form"> <span>Last Name</span> <input type="text" name="lastname" required> </div>
+                    <div class="input_form"> <span>First Name</span> <input type="text" name="firstname" required>
+                    </div>
+                    <div class="input_form"> <span>Last Name</span> <input type="text" name="lastname" required> </div>
                 </div>
                 <div class="input_form">
                     <span>Username</span>
@@ -76,12 +76,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <div class="input_form">
                     <span>Password</span>
-                    <input type="text" name="password" required>
+                    <input type="password" name="password" required>
                 </div>
 
                 <div class="input_form">
                     <span>Confirm Password</span>
-                    <input type="text" name="confirmpassword" required>
+                    <input type="password" name="confirmpassword" required>
                 </div>
 
                 <button class="btn">

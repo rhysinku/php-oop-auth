@@ -1,6 +1,6 @@
 const updateUser = document.getElementById("updateUser");
 
-updateUser.addEventListener("click", async (e) => {
+updateUser.addEventListener("submit", async (e) => {
   e.preventDefault();
   const updateFormData = new FormData(updateUser);
   updateFormData.append("profileEdit", 1);
@@ -9,8 +9,10 @@ updateUser.addEventListener("click", async (e) => {
   const confirmpassword = updateFormData.get("confirmpassword");
 
   if (password !== confirmpassword) {
+    e.stopPropagation();
     updateUser.classList.add("error-password");
   } else {
+    e.stopPropagation();
     updateUser.classList.remove("error-password");
   }
 
@@ -19,6 +21,8 @@ updateUser.addEventListener("click", async (e) => {
       method: "POST",
       body: updateFormData,
     });
+    window.location.href = "profile.php";
+
     if (!data.ok) {
       console.log(`Cannot Connect to File: ${data.status}`);
     }
