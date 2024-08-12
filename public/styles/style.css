@@ -362,11 +362,14 @@ html .hidden {
   width: 100%;
   isolation: isolate;
   inset: 0;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
 }
+
+.modal_container.active{display: flex;}
+
 .modal_backdrop{  
   position: absolute;
   inset: 0;
@@ -390,10 +393,14 @@ html .hidden {
   padding-bottom: 15px;
   align-self: center;
   border-bottom: 1px solid var(--primary-color);
+  align-items: center;
 }
 .modal__header h3{
   font-size: 2rem;
   font-weight: bold;
 }
+
+.modal__header span{cursor: pointer;}
+.modal__header span:hover{color: var(--primary-color);}
 
 .modal__section{}

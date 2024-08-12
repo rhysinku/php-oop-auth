@@ -5,7 +5,7 @@
             <div class="contact__title">
                 <h1>Contacts </h1>
             </div>
-                <button class="btn contact__btn">Add Contact</button>
+                <button class="btn contact__btn open__modal" data-modal="addcontact_modal">Add Contact</button>
         </div>
     </div>
 </div>

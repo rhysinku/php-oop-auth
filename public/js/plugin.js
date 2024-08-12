@@ -23,13 +23,21 @@ closeModal.addEventListener('click' , ()=>{
 
 // New Version of Modal
 
-document.querySelectorAll('.modal--close').forEach(button => {
-    button.addEventListener('click' , ()=>{
-        const modal = button.closest('.modal_container')
-        
+function handleModal(modalSelector){
+
+const modal = document.getElementById(modalSelector)
+
+function openModal(){ modal.classList.add('active') }
+function closeModal(){ modal.classList.remove('active') }
+
+    document.querySelectorAll(`.open__modal[data-modal="${modalSelector}"]`).forEach(button =>{
+        button.addEventListener('click', openModal)
     })
-})
 
-
+    modal.querySelectorAll('.modal--close').forEach(button => {
+        button.addEventListener('click', closeModal)
+    })
+}
+handleModal('addcontact_modal')
 
 })
