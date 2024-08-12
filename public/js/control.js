@@ -41,6 +41,25 @@ addcontact.addEventListener('submit', async (e)=>{
   const addContactForm = new FormData(addcontact)
   addContactForm.append('addContact', 1)
 
+  const phoneInput = addcontact.querySelectorAll('.phone')
+  const phonePattern = /^\d{11,}$/;
+  let isValid = true;
+
+
+  phoneInput.forEach(input => {
+    const phoneValue = input.value.trim();
+    
+    if (!phonePattern.test(phoneValue)) {
+      e.stopPropagation(); // Prevent event from bubbling if validation fails
+      alert("Please enter a valid phone number with at least 11 digits.");
+      isValid = false;
+    }
+  });
+
+  if (!isValid) {
+    return; // Stop the form submission if validation fails
+  }
+  
   try{
     const data = await fetch(proccessApi, {
       method: "POST",

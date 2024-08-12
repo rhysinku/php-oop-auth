@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="input_form"> <span>Email</span> <input type="email" name="email"> </div>
-                <div class="input_form"> <span>Phone No.</span> <input type="text" name="phone"> </div>
+                <div class="input_form"> <span>Phone No.</span> <input type="text" name="phone" class="phone"> </div>
 
             <div class="flex-col">
                 <button type="submit" class="btn">Add</button>
