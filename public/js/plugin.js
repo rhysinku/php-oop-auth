@@ -5,6 +5,8 @@ const updateModal = document.getElementById('update_modal');
 const closeModal = document.getElementById('modal_close');
 
 
+
+
 const toggleUpdateBtn = () =>{
     updateModal.classList.toggle('block');
 }

@@ -38,7 +38,7 @@
             </div>
             <div class="form__btn_con">
                 <button type="submit" class="btn">Update</button>
-                <button class="btn">Close</button>
+                <button type="button" class="btn">Close</button>
             </div>
 
         </form>
