@@ -134,6 +134,7 @@ table {
   --secondary-color: #3a0ca3;
   --trinary-color: #4361ee;
   --fourth-color: #4cc9f0;
+  --danger-color:#c1121f;
 }
 
 body {
@@ -188,6 +189,10 @@ a.btn:hover {
   text-decoration: none;
 }
 
+.btn-danger{
+ background: var(--danger-color);
+}
+
 html .block {
   display: block;
 }
@@ -196,7 +201,7 @@ html .hidden {
 }
 
 .err {
-  color: red;
+  color: var(--danger-color);
   font-style: italic;
   margin-block: 15px;
   text-align: center;

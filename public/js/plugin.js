@@ -39,5 +39,4 @@ function closeModal(){ modal.classList.remove('active') }
     })
 }
 handleModal('addcontact_modal')
-
 })

@@ -3,7 +3,7 @@
     <div class="modal__box">
 
         <div class="modal__header">
-            <h3>Input Your Contact Here</h3> <span class="modal--close">&#10006;</span>
+            <h3>Add your contact</h3> <span class="modal--close">&#10006;</span>
         </div>
 
         <section class="modal__section">
@@ -18,7 +18,7 @@
 
             <div class="flex-col">
                 <button type="submit" class="btn">Add</button>
-                <button type="button" class="btn modal--close">Cancel</button>
+                <button type="button" class="btn btn-danger modal--close">Cancel</button>
             </div>
             </form>
         </section>
