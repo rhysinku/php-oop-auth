@@ -7,7 +7,7 @@
         </div>
 
         <section class="modal__section">
-            <form class="form">
+            <form class="form" id="addContact">
                 <div class="flex-col">
                     <div class="input_form"> <span>First Name</span> <input type="text" name="firstname"> </div>
                     <div class="input_form"> <span>Last Name</span> <input type="text" name="lastname"> </div>

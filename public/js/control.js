@@ -1,4 +1,7 @@
 const updateUser = document.getElementById("updateUser");
+const addcontact = document.getElementById('addContact');
+
+const proccessApi = "func/auth-process.php"
 
 updateUser.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -31,3 +34,24 @@ updateUser.addEventListener("submit", async (e) => {
     console.log(error);
   }
 });
+
+
+addcontact.addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const addContactForm = new FormData(addcontact)
+  addContactForm.append('addContact', 1)
+
+  try{
+    const data = await fetch(proccessApi, {
+      method: "POST",
+      body: addContactForm
+    })
+
+    const result = await data.text();
+    console.log(result);
+
+
+  }catch(err){
+    console.log(err)
+  }
+})

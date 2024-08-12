@@ -28,6 +28,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 }
 
+    if(isset($_POST['addContact'])){
+        $userId = $_SESSION['user_id'];
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $phone = $_POST['phone'];
+        
+        return print_r($_POST);
+    }
+
 }
     
 
