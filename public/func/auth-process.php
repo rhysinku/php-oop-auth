@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $lastname = $_POST['lastname'];
         $phone = $_POST['phone'];
         
-        return print_r($_POST);
+        
     }
 
 }
