@@ -21,5 +21,15 @@ closeModal.addEventListener('click' , ()=>{
 })
 
 
+// New Version of Modal
+
+document.querySelectorAll('.modal--close').forEach(button => {
+    button.addEventListener('click' , ()=>{
+        const modal = button.closest('.modal_container')
+        
+    })
+})
+
+
 
 })

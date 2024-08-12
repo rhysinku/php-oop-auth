@@ -354,3 +354,46 @@ html .hidden {
 .contact__title h1 {
   font-size: 4rem;
 }
+
+
+.modal_container{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  isolation: isolate;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.modal_backdrop{  
+  position: absolute;
+  inset: 0;
+  display: block;
+  background: #000000bd;
+  z-index: -1;
+}
+
+.modal__box{ 
+  max-width: 600px;
+  width: 100%;
+  background: #fff;
+  border-radius: 25px;
+  padding-block: 25px;
+  padding-inline: 15px;
+}
+.modal__header{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  align-self: center;
+  border-bottom: 1px solid var(--primary-color);
+}
+.modal__header h3{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.modal__section{}

@@ -1,3 +1,4 @@
+<?php include('includes/Contact/AddContactModal.php') ?>
 <div class="contact">
     <div class="wrapper">
         <div class="contact__layout">
