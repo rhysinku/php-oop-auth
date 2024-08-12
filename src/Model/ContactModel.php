@@ -1,6 +1,6 @@
 <?php 
 
-namespace Modal;
+namespace Model;
 use Database\Database;
 
 use PDO;
